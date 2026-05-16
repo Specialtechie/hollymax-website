@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Holly MaX Networking and Services Ltd.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+        
+        body { font-family: 'Inter', sans-serif; }
+        
+        .hero-bg {
+            background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.65)), 
+                              url('https://picsum.photos/id/1015/2000/1200');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #f97316;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover:after, .nav-link.active:after {
+            width: 100%;
+        }
+        
+        .service-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.15);
+        }
+        
+        .gallery-img {
+            transition: all 0.4s ease;
+        }
+        .gallery-img:hover {
+            transform: scale(1.06);
+        }
+    </style>
+</head>
+<body class="bg-zinc-50 text-zinc-800">
+
+    <!-- HEADER -->
+    <header class="bg-white border-b sticky top-0 z-50 shadow-sm">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div onclick="navigateTo('home')" class="flex items-center gap-3 cursor-pointer">
+                <div class="w-11 h-11 bg-orange-600 rounded-2xl flex items-center justify-center text-white font-black text-3xl">HM</div>
+                <div>
+                    <h1 class="text-2xl font-black tracking-tighter">Holly MaX</h1>
+                    <p class="text-xs text-zinc-500 -mt-1">NETWORKING & SERVICES LTD.</p>
+                </div>
+            </div>
+            
+            <nav class="hidden md:flex items-center gap-8 text-sm font-semibold">
+                <a onclick="navigateTo('home')" class="nav-link cursor-pointer active" id="nav-home">HOME</a>
+                <a onclick="navigateTo('services')" class="nav-link cursor-pointer" id="nav-services">SERVICES</a>
+                <a onclick="navigateTo('installations')" class="nav-link cursor-pointer" id="nav-installations">INSTALLATIONS</a>
+                <a onclick="navigateTo('contact')" class="nav-link cursor-pointer" id="nav-contact">CONTACT</a>
+            </nav>
+            
+            <a href="https://wa.me/2347038014183" target="_blank" 
+               class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-2xl flex items-center gap-2 font-medium transition">
+                <i class="fab fa-whatsapp text-lg"></i> WhatsApp
+            </a>
+        </div>
+    </header>
+
+    <!-- ==================== HOME PAGE ==================== -->
+    <div id="page-home" class="page">
+        <section class="hero-bg min-h-[70vh] flex items-center text-white">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="inline-flex items-center px-5 py-2.5 rounded-full bg-white/10 border border-white/30 text-sm font-semibold tracking-widest">
+                        LAGOS • NIGERIA
+                    </div>
+                    <h1 class="text-5xl md:text-6xl font-black tracking-tighter leading-none">
+                        Engineering Excellence in <br>Connectivity & Security
+                    </h1>
+                    <p class="text-xl max-w-lg text-white/90">
+                        Engineering high-performance connectivity and security systems. We Cover every Footage with precision and reliability. Professional Networking, CCTV, Access Control, Solar Installation & ATM Support.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <button onclick="navigateTo('contact')" 
+                                class="bg-orange-500 hover:bg-orange-600 px-10 py-4 rounded-2xl font-semibold text-lg transition shadow-lg">
+                            Get a Quote
+                        </button>
+                        <button onclick="navigateTo('services')" 
+                                class="border-2 border-white hover:bg-white hover:text-zinc-900 px-8 py-4 rounded-2xl font-semibold text-lg transition">
+                            Our Services
+                        </button>
+                    </div>
+                </div>
+                <div class="hidden lg:block">
+                    <img src="banner.jpeg" alt="network installation" class="rounded-3xl shadow-2xl border-8 border-white/20">
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Bar -->
+        <section class="py-10 bg-white border-b">
+            <div class="max-w-7xl mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div><div class="text-4xl font-black text-orange-600">500+</div><div class="text-sm text-zinc-500">Happy Clients</div></div>
+                <div><div class="text-4xl font-black text-orange-600">25+</div><div class="text-sm text-zinc-500">Expert Engineers</div></div>
+                <div><div class="text-4xl font-black text-orange-600">10+</div><div class="text-sm text-zinc-500">Years Experience</div></div>
+                <div><div class="text-4xl font-black text-orange-600">100%</div><div class="text-sm text-zinc-500">Project Success</div></div>
+            </div>
+        </section>
+
+        <!-- Services Preview -->
+        <section class="py-24 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-6">
+                <h2 class="text-4xl font-bold text-center mb-16">Our Core Services</h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="service-card bg-white rounded-3xl overflow-hidden"> <div class="h-56 bg-zinc-100 flex items-center justify-center text-7xl"><img src="network.jpeg" class="rounded-3xl shadow-2xl" alt="networking"></div> <div class="p-8"><h3 class="font-bold text-xl">NETWORKING INSTALLATION</h3></div> </div>
+                    <div class="service-card bg-white rounded-3xl overflow-hidden"> <div class="h-56 bg-zinc-100 flex items-center justify-center text-7xl"><img src="cctv.jpeg" class="rounded-3xl shadow-2xl" alt="cctv"></div> <div class="p-8"><h3 class="font-bold text-xl">CCTV CAMERA INSTALLATION</h3></div> </div>
+                    <div class="service-card bg-white rounded-3xl overflow-hidden"> <div class="h-56 bg-zinc-100 flex items-center justify-center text-7xl"><img src="lan.jpeg" class="rounded-3xl shadow-2xl" alt="lan"></div> <div class="p-8"><h3 class="font-bold text-xl">LAN PHONE / INTERCOM</h3></div> </div>
+                    <div class="service-card bg-white rounded-3xl overflow-hidden"> <div class="h-56 bg-zinc-100 flex items-center justify-center text-7xl"><img src="smartdoor.jpeg" class="rounded-3xl shadow-2xl" alt="smart door"></div> <div class="p-8"><h3 class="font-bold text-xl">ACCESS DOOR CONTROL</h3></div> </div>
+                    <div class="service-card bg-white rounded-3xl overflow-hidden"> <div class="h-56 bg-zinc-100 flex items-center justify-center text-7xl"><img src="solar.jpeg" class="rounded-3xl shadow-2xl" alt="solar"></div> <div class="p-8"><h3 class="font-bold text-xl">SOLAR INSTALLATION</h3></div> </div>
+                    <div class="service-card bg-white rounded-3xl overflow-hidden"> <div class="h-56 bg-zinc-100 flex items-center justify-center text-7xl"><img src="atm.jpeg" class="rounded-3xl shadow-2xl" alt="atm"></div> <div class="p-8"><h3 class="font-bold text-xl">ATM MACHINE SUPPORT</h3></div> </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Choose Holly MaX -->
+        <section class="py-24 bg-white">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <h2 class="text-5xl font-black tracking-tighter leading-none mb-6">
+                            Why Choose Holly MaX<br>
+                            <span class="text-orange-500">We Engineer Excellence.</span>
+                        </h2>
+                        <p class="text-lg text-zinc-600">
+                            We bring over a decade of hands-on experience 
+                            in networking and telecommunication services to every project.
+                        </p>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-12">
+                            <div class="why-card flex gap-4 bg-zinc-50 p-6 rounded-2xl">
+                                <i class="fas fa-check-circle text-3xl text-orange-500 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold">Certified Technical Team</h4>
+                                </div>
+                            </div>
+                            <div class="why-card flex gap-4 bg-zinc-50 p-6 rounded-2xl">
+                                <i class="fas fa-check-circle text-3xl text-orange-500 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold">Custom Solution Design</h4>
+                                </div>
+                            </div>
+                            <div class="why-card flex gap-4 bg-zinc-50 p-6 rounded-2xl">
+                                <i class="fas fa-check-circle text-3xl text-orange-500 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold">Post-Installation Support</h4>
+                                </div>
+                            </div>
+                            <div class="why-card flex gap-4 bg-zinc-50 p-6 rounded-2xl">
+                                <i class="fas fa-check-circle text-3xl text-orange-500 mt-1"></i>
+                                <div>
+                                    <h4 class="font-semibold">Premium Industry Hardware</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="relative">
+                        <img src="holly.jpeg" alt="Engineering Excellence" 
+                             class="rounded-3xl shadow-2xl">
+                    </div>
+                </div>
+                
+                <div class="text-center mt-12">
+                    <button onclick="navigateTo('contact')" 
+                            class="bg-orange-500 hover:bg-orange-600 text-white px-12 py-5 rounded-2xl font-semibold text-lg">
+                        Book A Site Survey
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Work / Delivered Installations -->
+        <section class="py-24 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-6">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-black tracking-tighter">Delivered Installations</h2>
+                    <p class="text-zinc-600 mt-3">Recent Projects Across Lagos</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div onclick="enlargeImage(this)" class="group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-3xl">
+                            <img src="post1.jpeg" alt="Project 1" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
+                        </div>
+                        
+                    </div>
+                    
+                    <div onclick="enlargeImage(this)" class="group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-3xl">
+                            <img src="inverter.jpeg" alt="Project 2" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
+                        </div>
+                        
+                    </div>
+                    
+                    <div onclick="enlargeImage(this)" class="group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-3xl">
+                            <img src="cctvv.jpeg" alt="Project 3" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
+                        </div>
+                        
+                    </div>
+                    
+                    <div onclick="enlargeImage(this)" class="group cursor-pointer">
+                        <div class="relative overflow-hidden rounded-3xl">
+                            <img src="securitydoor.jpeg" alt="Project 4" class="w-full h-64 object-cover transition-transform group-hover:scale-110">
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== SERVICES PAGE ==================== -->
+    <div id="page-services" class="page hidden">
+        <section class="py-20 bg-slate-50">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                <h1 class="text-5xl font-black mb-4">What We Offer ?</h1>
+                <p class="text-zinc-600 max-w-2xl mx-auto">Professional engineering solutions for security, connectivity, and power needs.</p>
+            </div>
+        </section>
+
+        <section class="py-20 space-y-24">
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                <div><img src="network.jpeg" class="rounded-3xl shadow-2xl" alt="networking"></div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">NETWORKING INSTALLATION</h2>
+                    <p class="text-zinc-600">Structured cabling, LAN/WAN setup, fiber optics, and complete network infrastructure.</p>
+                </div>
+            </div>
+            <!-- Repeat for other services (shortened for brevity - you can expand) -->
+            <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+                <div><img src="cctv.jpeg" class="rounded-3xl shadow-2xl" alt="CCTV Installation"></div>
+                <div>
+                    <h2 class="text-3xl font-bold mb-6">CAMERA INSTALLATION (CCTV)</h2>
+                    <p class="text-zinc-600">High-definition surveillance systems with remote monitoring and AI features.</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== RECENT INSTALLATIONS PAGE ==================== -->
+    <div id="page-installations" class="page hidden py-20 bg-zinc-100">
+        <div class="max-w-7xl mx-auto px-6">
+            <h1 class="text-5xl font-black text-center mb-16">RECENT INSTALLATIONS</h1>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div onclick="enlargeImage(this)" class="gallery-img cursor-pointer rounded-3xl overflow-hidden shadow-xl"><img src="post1.jpeg" alt="Project 1" class="w-full h-64 object-cover transition-transform group-hover:scale-110"></div>
+                <div onclick="enlargeImage(this)" class="gallery-img cursor-pointer rounded-3xl overflow-hidden shadow-xl"><img src="inverter.jpeg" alt="Project 2" class="w-full h-64 object-cover transition-transform group-hover:scale-110"></div>
+                <div onclick="enlargeImage(this)" class="gallery-img cursor-pointer rounded-3xl overflow-hidden shadow-xl"><img src="cctvv.jpeg" alt="Project 3" class="w-full h-64 object-cover transition-transform group-hover:scale-110"></div>
+                <div onclick="enlargeImage(this)" class="gallery-img cursor-pointer rounded-3xl overflow-hidden shadow-xl"><img src="securitydoor.jpeg" alt="Project 4" class="w-full h-64 object-cover transition-transform group-hover:scale-110"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== CONTACT PAGE ==================== -->
+    <div id="page-contact" class="page hidden">
+        <section class="py-20 bg-white">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-5 gap-16">
+                <div class="md:col-span-2 space-y-10">
+                    <h2 class="text-5xl font-black">Contact Us</h2>
+                    <div class="space-y-8">
+                        <div class="flex gap-4">
+                            <i class="fas fa-map-marker-alt text-3xl text-orange-500 mt-1"></i>
+                            <div>No 3 Oshitelu Street,<br>Ikeja, Lagos State</div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fas fa-phone text-3xl text-orange-500 mt-1"></i>
+                            <div>+234 703 801 4183<br>+234 807 292 3348</div>
+                        </div>
+                        <div class="flex gap-4">
+                            <i class="fas fa-envelope text-3xl text-orange-500 mt-1"></i>
+                            <div>contact@hollymaxnetworking.com.ng</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:col-span-3 bg-zinc-50 p-10 rounded-3xl">
+                    <form onsubmit="handleSubmit(event)" class="space-y-6">
+                        <input type="text" id="name" placeholder="Full Name *" required class="w-full px-6 py-4 rounded-2xl border focus:outline-none focus:border-orange-500">
+                        <input type="email" id="email" placeholder="Email *" required class="w-full px-6 py-4 rounded-2xl border focus:outline-none focus:border-orange-500">
+                        <input type="tel" id="phone" placeholder="Phone Number" class="w-full px-6 py-4 rounded-2xl border focus:outline-none focus:border-orange-500">
+                        <select id="service" class="w-full px-6 py-4 rounded-2xl border focus:outline-none focus:border-orange-500">
+                            <option value="">Select Service</option>
+                            <option>Networking Installation</option>
+                            <option>CCTV Installation</option>
+                            <option>LAN Phone / Intercom</option>
+                            <option>Access Door Control</option>
+                            <option>Solar Installation</option>
+                            <option>ATM Support</option>
+                        </select>
+                        <textarea id="message" rows="5" placeholder="Your Message *" required class="w-full px-6 py-4 rounded-3xl border focus:outline-none focus:border-orange-500"></textarea>
+                        <button type="submit" class="w-full bg-orange-500 hover:bg-orange-600 text-white py-5 rounded-2xl font-semibold text-lg">SEND MESSAGE</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ==================== RICH FOOTER ==================== -->
+    <footer class="bg-zinc-900 text-white pt-16 pb-10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-10">
+                
+                <!-- Company Info -->
+                <div class="md:col-span-5">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-orange-600 rounded-2xl flex items-center justify-center text-white font-black text-4xl">HM</div>
+                        <div>
+                            <h2 class="text-3xl font-black tracking-tighter">Holly MaX</h2>
+                            <p class="text-orange-400 text-sm">NETWORKING & SERVICES LTD.</p>
+                        </div>
+                    </div>
+                    <p class="text-zinc-400 max-w-md">
+                        Delivering professional networking, security, and power solutions across Lagos with excellence and reliability since 2016.
+                    </p>
+                    <div class="mt-8 flex gap-4">
+                        <a href="#" class="w-10 h-10 bg-zinc-800 hover:bg-orange-600 rounded-xl flex items-center justify-center transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-zinc-800 hover:bg-orange-600 rounded-xl flex items-center justify-center transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-zinc-800 hover:bg-orange-600 rounded-xl flex items-center justify-center transition"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="md:col-span-2">
+                    <h4 class="font-semibold text-lg mb-6 text-white">Quick Links</h4>
+                    <div class="space-y-3 text-zinc-400">
+                        <p onclick="navigateTo('services')" class="cursor-pointer hover:text-white transition">Our Services</p>
+                        <p onclick="navigateTo('installations')" class="cursor-pointer hover:text-white transition">Recent Installations</p>
+                        <p onclick="navigateTo('contact')" class="cursor-pointer hover:text-white transition">Get Quote</p>
+                    </div>
+                </div>
+
+                <!-- Services -->
+                <div class="md:col-span-2">
+                    <h4 class="font-semibold text-lg mb-6 text-white">Services</h4>
+                    <div class="space-y-3 text-zinc-400 text-sm">
+                        <p>Networking Installation</p>
+                        <p>CCTV Camera Installation</p>
+                        <p>LAN Phone / Intercom</p>
+                        <p>Access Door Control</p>
+                        <p>Solar Installation</p>
+                        <p>ATM Machine Support</p>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="md:col-span-3">
+                    <h4 class="font-semibold text-lg mb-6 text-white">Get In Touch</h4>
+                    <div class="space-y-5 text-zinc-400">
+                        <div class="flex gap-3">
+                            <i class="fas fa-map-marker-alt mt-1 text-orange-500"></i>
+                            <div>No 3 Oshitelu Street,<br>Ikeja, Lagos State</div>
+                        </div>
+                        <div class="flex gap-3">
+                            <i class="fas fa-phone mt-1 text-orange-500"></i>
+                            <div>
+                                <a href="tel:+2347038014183" class="hover:text-white">+234 703 801 4183</a><br>
+                                <a href="tel:+2348072923348" class="hover:text-white">+234 807 292 3348</a>
+                            </div>
+                        </div>
+                        <div class="flex gap-3">
+                            <i class="fas fa-envelope mt-1 text-orange-500"></i>
+                            <a href="mailto:contact@hollymaxnetworking.com.ng" class="hover:text-white">contact@hollymaxnetworking.com.ng</a>
+                        </div>
+                        <div class="flex gap-3">
+                            <i class="fas fa-clock mt-1 text-orange-500"></i>
+                            <div>Mon - Fri: 9:00 AM - 7:00 PM</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div class="border-t border-zinc-800 mt-16 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-zinc-500">
+                <div>© 2026 Holly MaX Networking and Services Ltd. All Rights Reserved.</div>
+                <div class="mt-4 md:mt-0">
+                    <a href="https://hollymaxnetworking.com.ng/" target="_blank" class="hover:text-orange-400 transition">
+                        Original Website →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Image Modal -->
+    <div id="modal" class="hidden fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4">
+        <div class="max-w-4xl w-full relative">
+            <button onclick="closeModal()" class="absolute -top-12 right-4 text-white text-5xl hover:text-orange-400">×</button>
+            <img id="modalImage" src="" class="w-full rounded-3xl shadow-2xl" alt="">
+        </div>
+    </div>
+
+    <script>
+        function navigateTo(page) {
+            document.querySelectorAll('.page').forEach(p => p.classList.add('hidden'));
+            document.getElementById(`page-${page}`).classList.remove('hidden');
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.classList.remove('active');
+                if (link.id === `nav-${page}`) link.classList.add('active');
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function enlargeImage(el) {
+            document.getElementById('modalImage').src = el.querySelector('img').src;
+            document.getElementById('modal').classList.remove('hidden');
+            document.getElementById('modal').classList.add('flex');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function handleSubmit(e) {
+            e.preventDefault();
+            alert("✅ Thank you! Your message has been received. We will contact you shortly.");
+            e.target.reset();
+        }
+
+        // Keyboard support
+        document.addEventListener('keydown', e => {
+            if (e.key === "Escape") closeModal();
+        });
+
+        // Initialize
+        window.onload = () => navigateTo('home');
+    </script>
+</body>
+</html>
